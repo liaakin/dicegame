@@ -166,40 +166,29 @@ main {
   color: #c7365f;
 }
 
-/* Button and Modal Window for Rules */
-.rules {
-  position: absolute;
-  color: #444;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.2s;
-  right: 1rem;
-  top: 6rem;
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 0.6rem 2rem;
-  border-radius: 50rem;
-}
-.rules:hover {
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+.game {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-items: top;
+  justify-content: center;
 }
 
-.exit {
-  position: absolute;
-  color: #444;
+.gameBtns div {
   font-size: 1.6rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.2s;
-  right: 2rem;
-  top: 11rem;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   padding: 0.6rem 2rem;
   border-radius: 50rem;
+  color: #444;
+  margin: -10rem 0 1rem 1rem;
+}
+.gameBtns:hover {
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
 .modal {
@@ -461,6 +450,54 @@ main {
   display: flex;
   flex-direction: row;
   z-index: 15;
+}
+
+/* Dark Mode  */
+body.dark-mode {
+  color: #ffffff;
+  background-image: linear-gradient(to top left, #646164 0%, #443e3e 100%);
+}
+
+body.dark-mode .gameBtns {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .player {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.dark-mode .player--active {
+  background-color: rgba(95, 95, 95, 0.87);
+}
+
+body.dark-mode .dice {
+  background-color: #4a4a4a;
+}
+body.dark-mode .current {
+  background-color: #4d494a;
+  color: #fff;
+}
+
+body.dark-mode button {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .current-score {
+  color: #b93636;
+}
+body.dark-mode .score {
+  color: #fff;
+}
+body.dark-mode .loader {
+  color: #ffffff;
+  background-image: linear-gradient(to top left, #646164 0%, #443e3e 100%);
+}
+
+body.dark-mode .overlay {
+  background-color: #3b3b3b;
 }
 
 .hidden {

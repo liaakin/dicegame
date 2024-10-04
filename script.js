@@ -20,6 +20,8 @@ const rulesBtn = document.querySelector('.rulesBtn');
 const startBtn = document.querySelector('.startBtn');
 const start = document.querySelector('.start');
 const game = document.querySelector('.game');
+const exit = document.querySelector('.exit');
+const darkMode = document.querySelector('.dark');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -52,7 +54,7 @@ modal.addEventListener('click', function (e) {
 });
 
 // Quit game
-document.querySelector('.exit').addEventListener('click', function () {
+exit.addEventListener('click', function () {
   const diceOne = document.querySelector('.one0');
   const diceSix = document.querySelector('.six0');
   diceOne.style.animationDelay = 0 + 's';
@@ -64,6 +66,11 @@ document.querySelector('.exit').addEventListener('click', function () {
     start.classList.remove('hidden');
   }, 5000);
   init();
+});
+
+// Dark Mode
+darkMode.addEventListener('click', function () {
+  document.body.classList.toggle('dark-mode');
 });
 
 // Game Functionality
@@ -96,7 +103,7 @@ const switchPlayer = function () {
 };
 
 //Rolling dice functionality
-btnRoll.addEventListener('click', function () {
+const rollDice = function () {
   if (playing) {
     //1. Generating a random dice-roll
     const dice = Math.trunc(Math.random() * 6) + 1;
@@ -112,9 +119,16 @@ btnRoll.addEventListener('click', function () {
       switchPlayer();
     }
   }
+};
+// Activate rollDice
+btnRoll.addEventListener('click', rollDice);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === ' ') rollDice();
 });
+
 // Hold
-btnHold.addEventListener('click', function () {
+const holdDice = function () {
   if (playing) {
     //1. Add current score to active players score
     scores[activePlayer] += currentScore;
@@ -135,6 +149,12 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+};
+// Activate holdDice
+btnHold.addEventListener('click', holdDice);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') holdDice();
 });
 // New Game
 btnNew.addEventListener('click', init);

@@ -4,11 +4,13 @@ The Pig Game is a simple and fun dice game created using HTML, CSS, and JavaScri
 
 Features
 
--Loader : A loading animation is displayed while the game is initializing, enhancing the user experience.
+- Loader : A loading animation is displayed while the game is initializing, enhancing the user experience.
 - Start Page: The application begins with an page, where you can read the rules or start the game.
 - Player Interaction: Players can take turns rolling the dice and accumulating points. The game offers a simple and user-friendly interface.
 - Scoring System: Players have the option to secure their points or continue rolling, with the risk of losing all points accumulated in that round.
 - Rules Button: A button on the user interface that displays the game rules. This helps new players quickly understand the game mechanics.
+- Button to switch to dark mode
+- Roll dice with Space-Key or Hold with Enter-Key
 
 Technologies
 
